@@ -463,6 +463,37 @@ intercept of 10 and a slope of 0.9?
     >>> print(np.sum(errors ** 2))
     255.75076072
 
+******************
+Testing hypotheses
+******************
+
+We now have an estimate :math:`\bhat` of the true and unobservable parameter
+vector :math:`\bvec`.
+
+We might want to use the elements of :math:`\bhat` to test hypotheses about
+:math:`\bvec`.  For example, I might have the null hypothesis that there is no
+linear relationship between psychopathy and clamminess.  This is equivalent to
+saying that I believe that the first element of the true and unobservable
+parameter vector :math:`\bvec` is 0.  That is, the true slope relating
+psychopathy and clamminess is zero.
+
+However, I do not have the :math:`\bvec`, I have a sample estimate of
+:math:`\bvec`, which is :math:`\bhat`.  Now my question might be |--| is the
+observed value of the first element of :math:`\bhat` compatible with a true
+:math:`\bvec` value of 0.
+
+To ask this question, I need to know the expected variance of the :math:`\bhat`
+vector.  It is `possible to show
+<https://en.wikipedia.org/wiki/Ordinary_least_squares#Finite_sample_properties>`_
+that variance / covariance matrix of :math:`\bhat` is given by:
+
+.. math::
+
+    \operatorname{Var}[\, \hat\beta \mid X \,] = \sigma^2(X ^T X)^{-1}
+
+Therefore, the standard error.
+
+
 *********
 Contrasts
 *********
